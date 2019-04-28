@@ -1,0 +1,44 @@
+Best Search Filter, Easy to apply.
+<!--Tony Okoth's search filter library. Protected by the copyright laws of the United States of America.-->
+<!-- Contact: blairtony2014@gmail.com // 0715096908-->
+
+<!--This is your table id-->
+<table id="myTable">
+
+<!-- This is your search field-->
+ <input type="search" id="myInput" onkeyup="Blair()" placeholder="Search..">
+
+
+<!--This is the Javascript code for performing the filtering-->
+<script>
+function Blair() {
+  // Declare variables to use. Just leave them the way they are.
+  //  Only change the table name
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  // Depending on the number of td you have , you can add or remove some but dont modify
+  // Follow the index count , i.e [0], [1],,, etc
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    td1 = tr[i].getElementsByTagName("td")[1];
+    td2 = tr[i].getElementsByTagName("td")[2];
+    td3 = tr[i].getElementsByTagName("td")[3];
+    td4 = tr[i].getElementsByTagName("td")[4];
+    td5 = tr[i].getElementsByTagName("td")[5];
+    td6 = tr[i].getElementsByTagName("td")[6];
+    td7 = tr[i].getElementsByTagName("td")[10];
+    if (td || td1 || td2 || td3 || td4 || td5 || td6 || td7) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1 || td1.innerHTML.toUpperCase().indexOf(filter) > -1 || td2.innerHTML.toUpperCase().indexOf(filter) > -1 || td3.innerHTML.toUpperCase().indexOf(filter) > -1 || td4.innerHTML.toUpperCase().indexOf(filter) > -1 || td5.innerHTML.toUpperCase().indexOf(filter) > -1 || td6.innerHTML.toUpperCase().indexOf(filter) > -1 || td7.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
